@@ -51,3 +51,10 @@ std::shared_ptr<Folder> Folder::FindFolder(std::string name)
 	}
 	return nullptr;
 }
+
+/*std::shared_ptr<File> Folder::Search(std::string name)
+{
+	//loop/Iterate this folder's files
+	//If you find a file with the passed in name, return it
+	//Otherwise return nullptr
+} */
