@@ -91,3 +91,19 @@ void AddFolderMenu(shared_ptr<Folder> currentFolder)
 	auto newFolder = make_shared<Folder>(name);
 	currentFolder->AddFolder(newFolder);
 }
+
+
+
+//void search
+
+/*cout << "Enter the File Name: ";
+string fileName;
+cin >> fileName;
+cin.ingore();
+
+auto file = current_exception*/
+
+//Prompt user for a file name
+//search the current folder for the file
+//add method in folder to search files
+//if search call returns nullptr
