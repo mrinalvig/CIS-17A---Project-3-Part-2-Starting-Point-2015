@@ -4,6 +4,7 @@ using namespace std;
 void DisplayMenu(shared_ptr<Folder> currentFolder, shared_ptr<Folder> parent);
 void AddFileMenu(shared_ptr<Folder> currentFolder);
 void AddFolderMenu(shared_ptr<Folder> currentFolder);
+void searchFile(shared_ptr<Folder> currentFolder);
 shared_ptr<Folder> NavigateToFolder(shared_ptr<Folder> currentFolder);
 
 int main()
@@ -94,14 +95,15 @@ void AddFolderMenu(shared_ptr<Folder> currentFolder)
 
 
 
-//void search
+void searchFile(shared_ptr<Folder> currentFolder)
+{
+	cout << "Enter the File Name: ";
+	string fileName;
+	cin >> fileName;
+	cin.ignore();
 
-/*cout << "Enter the File Name: ";
-string fileName;
-cin >> fileName;
-cin.ingore();
+}
 
-auto file = current_exception*/
 
 //Prompt user for a file name
 //search the current folder for the file
