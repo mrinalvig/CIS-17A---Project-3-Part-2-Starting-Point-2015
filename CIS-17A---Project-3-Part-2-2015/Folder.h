@@ -9,7 +9,8 @@ private:
 	std::vector <std::shared_ptr<Folder>> _folders;
 	std::vector<std::shared_ptr<File>> _files;
 public:
-	Folder::Folder (std::string name);
+	Folder(std::string name);
+	Folder::Folder();
 	~Folder();
 
 	std::string getName() { return _name; }

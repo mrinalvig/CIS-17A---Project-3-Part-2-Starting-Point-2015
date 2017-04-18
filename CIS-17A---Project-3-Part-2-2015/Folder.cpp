@@ -4,6 +4,10 @@ Folder::Folder(std::string name) : _name(name)
 {
 }
 
+Folder::Folder()
+{
+}
+
 Folder::~Folder()
 {
 }
