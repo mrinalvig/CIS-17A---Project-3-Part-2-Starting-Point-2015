@@ -9,8 +9,7 @@ private:
 	std::vector <std::shared_ptr<Folder>> _folders;
 	std::vector<std::shared_ptr<File>> _files;
 public:
-	Folder(std::string name);
-	Folder::Folder();
+	Folder::Folder (std::string name);
 	~Folder();
 
 	std::string getName() { return _name; }
@@ -19,6 +18,6 @@ public:
 	void AddFile(std::shared_ptr<File> newFile);
 	void AddFolder(std::shared_ptr<Folder> newFolder);
 	std::shared_ptr<Folder> FindFolder(std::string name);
-	//std::shared_ptr<File> Search(std::string name);
+	std::shared_ptr<File> Search(std::string name);
 };
 
