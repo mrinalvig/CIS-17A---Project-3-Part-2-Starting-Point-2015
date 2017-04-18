@@ -98,8 +98,6 @@ void AddFolderMenu(shared_ptr<Folder> currentFolder)
 	currentFolder->AddFolder(newFolder);
 }
 
-
-
 shared_ptr<File> searchFile (shared_ptr<Folder> currentFolder)
 {
 	system("cls");
@@ -110,11 +108,4 @@ shared_ptr<File> searchFile (shared_ptr<Folder> currentFolder)
 
 	auto file = currentFolder->Search(fileName);
 	return file;
-
 }
-
-
-//Prompt user for a file name
-//search the current folder for the file
-//add method in folder to search files
-//if search call returns nullptr
