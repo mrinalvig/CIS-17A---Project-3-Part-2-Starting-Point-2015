@@ -4,7 +4,7 @@ using namespace std;
 void DisplayMenu(shared_ptr<Folder> currentFolder, shared_ptr<Folder> parent);
 void AddFileMenu(shared_ptr<Folder> currentFolder);
 void AddFolderMenu(shared_ptr<Folder> currentFolder);
-shared_ptr<File> searchFile(shared_ptr<Folder> currentFolder);
+void searchFile(shared_ptr<Folder> currentFolder);
 shared_ptr<Folder> NavigateToFolder(shared_ptr<Folder> currentFolder);
 
 int main()
@@ -27,12 +27,7 @@ int main()
 			cout << endl << "Now in folder " << newcurrent->getName() << "!";
 			break;
 		}
-		case 5: {
-			auto foundFile = searchFile(currentFolder);
-			cout << "We have located the file '" << foundFile->getName() << "'." << endl;
-			system("pause");
-			break;
-		}
+		case 5: searchFile(currentFolder); break;
 		case 4: AddFolderMenu(currentFolder); break;
 		case 6: {
 			if (parentFolder != nullptr) {
@@ -98,7 +93,7 @@ void AddFolderMenu(shared_ptr<Folder> currentFolder)
 	currentFolder->AddFolder(newFolder);
 }
 
-shared_ptr<File> searchFile (shared_ptr<Folder> currentFolder)
+void searchFile (shared_ptr<Folder> currentFolder)
 {
 	system("cls");
 	cout << "Enter the File Name: ";
@@ -106,6 +101,16 @@ shared_ptr<File> searchFile (shared_ptr<Folder> currentFolder)
 	cin >> fileName;
 	cin.ignore();
 
-	auto file = currentFolder->Search(fileName);
-	return file;
+	auto result = currentFolder->Search(fileName);
+
+	if (result != nullptr)
+	{
+		cout << "We have located the file \"" << result->getName() << " \"" << endl;
+	}
+	else
+	{
+		cout << "We could not locate the file \"" << result->getName() << " \"" << endl;
+	}
+
+	system("pause");
 }
