@@ -62,11 +62,17 @@ std::shared_ptr<File> Folder::Search(std::string name)
 		{
 			return file;
 		}
-		else
+	}
+
+	for (auto folder : _folders)
+	{
+		auto found = folder->Search(name);
+
+		if (found != nullptr)
 		{
-			return nullptr;
+			return found;
 		}
 	}
 
-	
+	return nullptr;
 } 
