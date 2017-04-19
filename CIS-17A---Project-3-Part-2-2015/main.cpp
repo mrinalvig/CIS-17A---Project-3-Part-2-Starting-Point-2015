@@ -1,6 +1,7 @@
 #include "Folder.h"
 #include <iostream>
 using namespace std;
+
 void DisplayMenu(shared_ptr<Folder> currentFolder, shared_ptr<Folder> parent);
 void AddFileMenu(shared_ptr<Folder> currentFolder);
 void AddFolderMenu(shared_ptr<Folder> currentFolder);
@@ -27,8 +28,8 @@ int main()
 			cout << endl << "Now in folder " << newcurrent->getName() << "!";
 			break;
 		}
-		case 5: searchFile(currentFolder); break;
 		case 4: AddFolderMenu(currentFolder); break;
+		case 5: searchFile(currentFolder); break;
 		case 6: {
 			if (parentFolder != nullptr) {
 				currentFolder = parentFolder;
